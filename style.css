@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+    /* The grid container */
+    .grid-container {
+        display: grid;
+        grid-template-areas: 
+          'header header header header header header'
+          'main main main form form form ' 
+          'left left middle middle right right' 
+          'footer footer footer footer footer footer'
+          'rights rights rights rights rights rights';
+        /* grid-column-gap: 10px; - if you want gap between the columns */
+      } 
+  /* Style the header */
+  .header {
+    grid-area: header;
+    background-color: #f1f1f1;
+    text-align:left;
+    
+
+  }
+   /* Style the logo */
+ .header img {
+height: 50px;
+border-radius: 50%;
+}
+
+
+/* Style the main */
+.main{
+    grid-area: main;
+    text-align: initial;
+    background-color: #13abff;
+    color: azure;
+    font-family: sans-serif;
+    height: 400px;
+}
+.main h1 {
+    font-size: 1.5rem;
+}
+.main p{
+    padding: 5px;
+    text-align: center;
+}
+/* עיצוב הטופס הקונטיינר שעליו יושב הטופס */
+.form-container{
+    grid-area: form;
+    background-color: #13abff;
+    text-align:center;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+/* עיצוב הטופס */
+.form-container form{
+    width: 300px;
+    height: 300px;
+    background-color: rgba(16, 16, 16, 0.2);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start
+
+}
+/* עיצוב INPUTS */
+.form-container input[type=text], .form-container input[type=email],.form-container input[type=password] 
+{
+ width: 70%;
+ border: none;
+ border-radius: 3px;
+ background-color: #f5f5f5;
+ color: #777;
+ font-size: 12px;
+ font-weight: 500;
+ height: 30px;
+
+}
+.form input[type=submit] {
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ea5f09;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    
+  }
+ /* עיצוב לייבלים בטופס */
+ .label{
+    color: #fff;
+    box-sizing: border-box;
+    /* display: grid; */
+    width: 100%;
+    padding-bottom: 30px;
+    text-align: center;
+    
+  }
+
+.left,
+.middle,
+.right {
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+/* Style the left column */
+.left {
+    grid-area: left;
+  }
+  
+  /* Style the middle column */
+  .middle {
+    grid-area: middle;
+  }
+  
+  /* Style the right column */
+  .right {
+    grid-area: right;
+  }
+/*   עיצוב  צד שמאל*/
+.left i  {
+    font-size: 50px;
+    display: grid;
+    text-align: center;
+    color: gray;
+}
+.left h2 {
+    font-size: 28px;
+    display: grid;
+    text-align: center;
+    color: gray;
+}
+.left p {
+    display: grid;
+    text-align: center;
+    color: gray;
+}
+.middle i{
+    font-size: 50px;
+    display: grid;
+    text-align: center;
+    color: gray;
+
+}
+.middle h2 {
+    font-size: 28px;
+    display: grid;
+    text-align: center;
+    color: gray;
+}
+.middle p {
+    display: grid;
+    text-align: center;
+    color: gray;
+}
+.right i {
+    font-size: 50px;
+    display: grid;
+    text-align: center;
+    color: gray;
+
+}
+.right h2 {
+    font-size: 28px;
+    display: grid;
+    text-align: center;
+    color: gray;
+}
+.right p {
+    display: grid;
+    text-align: center;
+    color: gray;
+}
+
+.footer{
+    grid-area: footer;
+    position: relative;
+    background-image: url("images/pexels-life-of-pix-7974.jpg");
+    background-size: cover;
+    /* background-attachment: fixed; */
+    border: 1px solid black;  
+    padding: 10px;
+    height: 450px;
+    /* opacity: 0.5;
+    z-index: 99999; */
+  }
+  .footer img{
+    position: absolute;
+    z-index: 1;
+    opacity: 100% !important;
+    border: 1px solid;
+    top: 100px;
+    left: 570px;
+    border-radius: 50%;
+    align-items: center;
+  }
+  .footer p {
+    /* display: grid; */
+    position: absolute;
+    top: 230px;
+    padding: 100px;
+    text-align: center;
+    color: wheat;
+    /* vertical-align: text-top; */
+    padding-top: 30px;
+    /* line-height: 450px; */
+}
+
+  .rights{
+    grid-area: rights;
+    display: grid;
+    text-align: center;
+    color: gray;
+  }
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .grid-container  {
+      grid-template-areas: 
+        'header header header header header header' 
+        'main main main main main main'
+        'form form form form form form'
+        'left left left left left left' 
+        'middle middle middle middle middle middle' 
+        'right right right right right right' 
+        'footer footer footer footer footer footer'
+        'rights rights rights rights rights rights';
+    }
+    .footer{
+        grid-area: footer;
+        position: relative;
+        background-image: url("images/pexels-life-of-pix-7974.jpg");
+        background-size: cover;
+        /* background-attachment: fixed; */
+        border: 1px solid black;  
+        padding: 10px;
+        height: 450px;
+        /* opacity: 0.5;
+        z-index: 99999; */
+      }
+      .footer img{
+        position: absolute;
+        border: 1px solid;
+        top: 100px;
+        left: 110px;
+        border-radius: 50%;
+        align-items: center;
+      }
+      .footer p {
+        top: 220px;
+    position: absolute;
+    color: wheat;
+    vertical-align: middle;
+    padding-top: 5px;
+    }
+  }
